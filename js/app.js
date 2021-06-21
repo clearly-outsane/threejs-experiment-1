@@ -18,7 +18,8 @@ export default class Sketch {
             0.01,
             10
         )
-        this.camera.position.z = 1
+        this.camera.position.z = 0.4
+        this.camera.position.y = -1
 
         this.renderer = new THREE.WebGLRenderer({ antialias: true })
         this.renderer.setSize(this.width, this.height)
@@ -45,7 +46,7 @@ export default class Sketch {
     }
 
     addObject() {
-        this.geometry = new THREE.PlaneBufferGeometry(4, 4, 60, 60)
+        this.geometry = new THREE.PlaneBufferGeometry(4, 4, 50, 50)
         // this.material = new THREE.MeshNormalMaterial()
         this.material = new THREE.ShaderMaterial({
             uniforms: { time: { value: 0 } },
