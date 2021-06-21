@@ -1,0 +1,25 @@
+{
+  "name": "first-threejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".prettierrc.js",
+  "dependencies": {
+    "three": "^0.129.0"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clearly-outsane/threejs-experiment-1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/clearly-outsane/threejs-experiment-1/issues"
+  },
+  "homepage": "https://github.com/clearly-outsane/threejs-experiment-1#readme"
+}
