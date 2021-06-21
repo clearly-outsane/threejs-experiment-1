@@ -77,7 +77,7 @@ uniform float time;
 
 void main(){
     vec3 pos=position;
-    pos.z+=.1*cnoise(vec3(position.x*3.,position.y*3.,time/1.));
+    pos.z+=.1*cnoise(vec3(position.x*4.,position.y*4.+time,0.));
     
     gl_Position=projectionMatrix*modelViewMatrix*vec4(pos,1.);
 }

@@ -26,8 +26,8 @@ export default class Sketch {
 
         this.controls = new OrbitControls(this.camera, this.renderer.domElement)
 
-        this.resize
-        this.setupResize
+        this.resize()
+        this.setupResize()
         this.addObject()
         this.render()
     }
@@ -45,7 +45,7 @@ export default class Sketch {
     }
 
     addObject() {
-        this.geometry = new THREE.PlaneBufferGeometry(0.5, 0.5, 40, 40)
+        this.geometry = new THREE.PlaneBufferGeometry(4, 4, 50, 50)
         // this.material = new THREE.MeshNormalMaterial()
         this.material = new THREE.ShaderMaterial({
             uniforms: { time: { value: 0 } },
