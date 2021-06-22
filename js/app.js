@@ -3,6 +3,8 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import fragment from './shaders/fragment.glsl'
 import vertex from './shaders/vertex.glsl'
 
+import ocean from '../imgs/ocean.jpg'
+
 export default class Sketch {
     constructor(options) {
         this.time = 0
@@ -18,8 +20,7 @@ export default class Sketch {
             0.01,
             10
         )
-        this.camera.position.z = 0.4
-        this.camera.position.y = -1
+        this.camera.position.z = 3
 
         this.renderer = new THREE.WebGLRenderer({ antialias: true })
         this.renderer.setSize(this.width, this.height)
@@ -47,9 +48,13 @@ export default class Sketch {
 
     addObject() {
         this.geometry = new THREE.PlaneBufferGeometry(4, 4, 50, 50)
+        this.geometry = new THREE.SphereBufferGeometry(1, 50, 50)
         // this.material = new THREE.MeshNormalMaterial()
         this.material = new THREE.ShaderMaterial({
-            uniforms: { time: { value: 0 } },
+            uniforms: {
+                time: { value: 0 },
+                oceanTexture: { value: new THREE.TextureLoader().load(ocean) },
+            },
             fragmentShader: fragment,
             vertexShader: vertex,
             side: THREE.DoubleSide,
@@ -62,8 +67,8 @@ export default class Sketch {
 
     render() {
         this.time += 0.005
-        this.mesh.rotation.x = this.time / 2000
-        this.mesh.rotation.y = this.time / 1000
+        // this.mesh.rotation.x = this.time / 2000
+        // this.mesh.rotation.y = this.time / 1000
 
         this.material.uniforms.time.value = this.time
 
