@@ -17,11 +17,35 @@
 } */
 
 body {
-    font-family: 'Averta';
+    color: #000;
+    font-family: 'Averta', sans-serif;
+    font-size: 14px;
+    letter-spacing: normal;
+    line-height: normal;
+    text-align: left;
+    -webkit-font-smoothing: antialiased;
 }
 
 img {
     vertical-align: middle;
+}
+
+.brief-grid {
+    display: flex;
+}
+
+.brief-grid-col .-left {
+    padding: 0 0 30px 0;
+}
+
+.brief-header {
+    padding: 7px 0 0 0;
+}
+
+.brief-text {
+    font-size: 20px;
+    line-height: 155%;
+    letter-spacing: 0.00464286em;
 }
 
 .hero {
@@ -41,7 +65,8 @@ img {
     -webkit-box-direction: normal;
 }
 
-.hero-container {
+.hero-container,
+.brief-container {
     padding: 0 20px;
 }
 
@@ -77,7 +102,8 @@ h1 {
 }
 
 @media (min-width: 360px) {
-    .hero-container {
+    .hero-container,
+    .brief-container {
         padding: 0 30px;
     }
     .hero-text {
@@ -89,7 +115,8 @@ h1 {
 }
 
 @media (min-width: 768px) {
-    .hero-container {
+    .hero-container,
+    .brief-container {
         padding: 0 100px;
     }
     .hero {
@@ -104,26 +131,63 @@ h1 {
         font-size: 20px;
         line-height: 250%;
     }
+    .brief-grid-col .-left {
+        min-width: 190px;
+        max-width: 190px;
+        padding: 0 20px 0 0;
+    }
+    .brief-text {
+        font-size: 22px;
+        line-height: 150%;
+        letter-spacing: normal;
+    }
 }
 
 @media (min-width: 1024px) {
-    .hero-container {
+    .hero-container,
+    .brief-container {
         padding: 0 120px;
+    }
+    .brief-grid-col.-left {
+        min-width: 300px;
+        max-width: 300px;
+        padding: 0 80px 0 0;
     }
 }
 
 @media (min-width: 1200px) {
-    .hero-container {
+    .hero-container,
+    .brief-container {
         padding: 0 150px;
     }
     .hero-text {
         font-size: 5.41667vw;
     }
+    .brief-text {
+        max-width: 92%;
+        font-size: 28px;
+        line-height: 150%;
+    }
 }
 
 @media (min-width: 1350px) {
-    .hero-container {
+    .hero-container,
+    .brief-container {
         padding: 0 180px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .brief-grid-col.-left {
+        min-width: 400px;
+        max-width: 300px;
+    }
+}
+
+@media (min-width: 1900px) {
+    .hero-container,
+    .brief-container {
+        padding: 0 270px;
     }
 }
 
@@ -154,5 +218,21 @@ section {
 @media (min-width: 768px) {
     .screenshot-container {
         padding-bottom: 56.25%;
+    }
+}
+
+.brief-content {
+    padding: 120px 0;
+}
+
+@media (min-width: 360px) {
+    .brief-content {
+        padding: 170px 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .brief-content {
+        padding: 300px 0;
     }
 }

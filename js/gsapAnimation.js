@@ -3,7 +3,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-smoothScroll('#content')
+if (window.matchMedia('(min-width: 600px)').matches) {
+    smoothScroll('#content')
+}
 
 gsap.utils.toArray('.screenshot').forEach((section, i) => {
     section.bg = section.querySelector('.screenshot-container')
