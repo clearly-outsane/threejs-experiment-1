@@ -4,6 +4,7 @@
   "description": "",
   "main": ".prettierrc.js",
   "dependencies": {
+    "gsap": "^3.7.0",
     "three": "^0.129.0"
   },
   "devDependencies": {

@@ -13,6 +13,6 @@ void main(){
     
     vec4 oceanView=texture2D(oceanTexture,newUV);
     
-    gl_FragColor=vec4(finalColor,1.);
+    gl_FragColor=vec4(vUv,0.,1.);
     
 }

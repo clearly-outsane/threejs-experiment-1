@@ -85,7 +85,7 @@ void main(){
     
     // pos.z+=.1*sin(dist*40.-time*10.);
     
-    pos+=.1*normal*noise;
+    // pos+=.1*normal*noise;
     
     vNoise=noise;
     vUv=uv;
