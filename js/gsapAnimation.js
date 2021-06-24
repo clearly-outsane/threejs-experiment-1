@@ -3,7 +3,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-if (window.matchMedia('(min-width: 600px)').matches) {
+if (window.matchMedia('(min-width: 768px)').matches) {
     smoothScroll('#content')
 }
 
