@@ -25,7 +25,7 @@ gsap.utils.toArray('.screenshot').forEach((section, i) => {
 // this is the helper function that sets it all up. Pass in the content <div> and then the wrapping viewport <div> (can be the elements or selector text). It also sets the default "scroller" to the content so you don't have to do that on all your ScrollTriggers.
 function smoothScroll(content, viewport, smoothness) {
     content = gsap.utils.toArray(content)[0]
-    smoothness = smoothness || 1
+    smoothness = smoothness || 0.5
 
     gsap.set(viewport || content.parentNode, {
         overflow: 'hidden',
