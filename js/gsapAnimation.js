@@ -10,10 +10,10 @@ gsap.utils.toArray('.screenshot').forEach((section, i) => {
 
     // Do the parallax effect on each section
 
-    section.bg.style.backgroundPosition = `50% ${-innerHeight / 2}px`
+    section.bg.style.backgroundPosition = `50% ${-innerHeight / 4}px`
 
     gsap.to(section.bg, {
-        backgroundPosition: `50% ${innerHeight / 2}px`,
+        backgroundPosition: `50% ${innerHeight / 4}px`,
         ease: 'none',
         scrollTrigger: {
             trigger: section,
@@ -25,7 +25,7 @@ gsap.utils.toArray('.screenshot').forEach((section, i) => {
 // this is the helper function that sets it all up. Pass in the content <div> and then the wrapping viewport <div> (can be the elements or selector text). It also sets the default "scroller" to the content so you don't have to do that on all your ScrollTriggers.
 function smoothScroll(content, viewport, smoothness) {
     content = gsap.utils.toArray(content)[0]
-    smoothness = smoothness || 0.5
+    smoothness = smoothness || 0.7
 
     gsap.set(viewport || content.parentNode, {
         overflow: 'hidden',
