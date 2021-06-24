@@ -10,10 +10,10 @@ gsap.utils.toArray('.screenshot').forEach((section, i) => {
 
     // Do the parallax effect on each section
 
-    section.bg.style.backgroundPosition = `50% ${-innerHeight / 4}px`
+    section.bg.style.backgroundPosition = `50% ${-window.innerWidth / 6}px`
 
     gsap.to(section.bg, {
-        backgroundPosition: `50% ${innerHeight / 4}px`,
+        backgroundPosition: `50% ${window.innerWidth / 6}px`,
         ease: 'none',
         scrollTrigger: {
             trigger: section,
