@@ -72,6 +72,16 @@ a {
     text-decoration: none;
 }
 
+.brief-link-item::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -25px;
+    left: -5px;
+    right: -5px;
+    bottom: -25px;
+}
+
 .hero {
     position: relative;
     height: 55vh;

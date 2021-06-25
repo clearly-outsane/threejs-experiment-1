@@ -24,6 +24,50 @@ gsap.utils.toArray('.screenshot').forEach((section, i) => {
     })
 })
 
+//magnetic cursor
+gsap.utils.toArray('.brief-link-item').forEach((container, i) => {
+    const text = container.querySelector('.brief-link-text')
+
+    // gsap.set(text, {
+    //     xPercent: -50,
+    //     yPercent: -50,
+    // })
+
+    container.addEventListener('mousemove', onMove)
+    container.addEventListener('mouseleave', onLeave)
+
+    function onMove(e) {
+        const { left, top, width, height } = container.getBoundingClientRect()
+
+        const halfW = width / 2
+        const halfH = height / 2
+        const mouseX = e.x - left
+        const mouseY = e.y - top
+
+        const x = gsap.utils.interpolate(-halfW, halfW, mouseX / width)
+        const y = gsap.utils.interpolate(-halfH, halfH, mouseY / height)
+        console.log(x)
+
+        gsap.to(text, {
+            x: x / 4,
+            y: y / 4,
+            duration: 0.1,
+            ease: 'none',
+            overwrite: true,
+        })
+    }
+
+    function onLeave(e) {
+        gsap.to(text, {
+            x: 0,
+            y: 0,
+            ease: 'power3',
+            duration: 0.4,
+            overwrite: true,
+        })
+    }
+})
+
 // this is the helper function that sets it all up. Pass in the content <div> and then the wrapping viewport <div> (can be the elements or selector text). It also sets the default "scroller" to the content so you don't have to do that on all your ScrollTriggers.
 function smoothScroll(content, viewport, smoothness) {
     content = gsap.utils.toArray(content)[0]
